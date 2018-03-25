@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+
+<style>
+ul.imglist {
+    list-style: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+ul.imglist > li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 70%;
+}
+
+.img-with-text{
+/*     display: inline-block; */
+    float: left;
+    font-size: 70%;
+}
+
+</style>
+
+<title>Image preview for directory `{{ dirpath }}`</title>
+</head>
+<body>
+
+<h1>Image preview for directory `{{ dirpath }}`</h1>
+
+<!-- <ul class="imglist"> -->
+    {% for img in imglist %}
+<!--         <li> -->
+            <div class="img-with-text">
+                <img src="file://{{dirpath}}/{{img}}" title="{{img}}">
+<!--                 <p>{{img}}</p> -->
+            </div>
+<!--         </li> -->
+    {% endfor %}
+<!-- </ul> -->
+{% if dbg %}
+    {{dbg}}
+{% endif %}
+
+<br>
+<br>
+End of list
+
+
+
+</body>
+</html>

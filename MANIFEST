@@ -1,0 +1,5 @@
+include setup.py
+include imagedirpreview/imagedirpreview.py
+include imagedirpreview/__init__.py
+include requirements.txt
+include README.md
