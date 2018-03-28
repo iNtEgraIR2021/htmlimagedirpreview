@@ -10,9 +10,6 @@ import inspect
 import sys
 import os
 
-from ipydex import IPS
-
-
 IMAGE_EXTENSIONS = [".svg", ".png", ".jpg", ".jpeg", ".gif", ".bmp"]
 RESULT_FNAME = "000_preview.html"
 
@@ -63,7 +60,7 @@ def get_all_image_fnames(path="."):
 def main():
 
     dirpath = os.path.abspath(os.path.curdir)
-    imglist = get_all_image_fnames()[:30]
+    imglist = get_all_image_fnames()
 
     dbg = dirpath
     dbg += "\nlen={}".format(len(imglist))

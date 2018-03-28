@@ -3,23 +3,8 @@
 <head>
 
 <style>
-ul.imglist {
-    list-style: none;
-    display: inline;
-    margin: 0;
-    padding: 0;
-}
-
-ul.imglist > li {
-    display: inline;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-size: 70%;
-}
 
 .img-with-text{
-/*     display: inline-block; */
     float: left;
     font-size: 70%;
 }
@@ -30,25 +15,41 @@ ul.imglist > li {
 </head>
 <body>
 
-<h1>Image preview for directory `{{ dirpath }}`</h1>
+<h1>Image preview </h1>
 
-<!-- <ul class="imglist"> -->
-    {% for img in imglist %}
-<!--         <li> -->
-            <div class="img-with-text">
-                <img src="file://{{dirpath}}/{{img}}" title="{{img}}">
-<!--                 <p>{{img}}</p> -->
-            </div>
-<!--         </li> -->
-    {% endfor %}
-<!-- </ul> -->
+<p>
+For directory `{{ dirpath }}`
+</p>
+
+<p>
+{% for img in imglist %}
+        <div class="img-with-text">
+            <img src="file://{{dirpath}}/{{img}}" title="{{img}}">
+        </div>
+{% endfor %}
+</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>
+<!-- for some reasons text in the first paragraph after the divs does not start at new line -->
+<hr width="80%" color="#AAA">
+</p>
+<br>
+<p>
 {% if dbg %}
-    {{dbg}}
+{{dbg}}
 {% endif %}
-
+</p>
 <br>
 <br>
+<p>
 End of list
+<hr width="80%" color="#AAA">
+</p>
 
 
 
