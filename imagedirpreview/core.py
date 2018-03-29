@@ -81,8 +81,14 @@ def main():
     dbg = dirpath
     dbg += "\nlen={}".format(len(imglist))
 
+
     templatepath = get_template_path()
-    context = dict(imglist=imglist, dirpath=dirpath, dbg=dbg)
+    blocksize = 200
+
+    # no need to add 1 here due to 0-indexing of blocks in the template
+    blocknumber = len(imglist)//blocksize
+    context = dict(imglist=imglist, dirpath=dirpath, dbg=None,
+                   blocksize=blocksize, blocknumber=blocknumber)
 
     res = render(templatepath, context)
     # res = ""
