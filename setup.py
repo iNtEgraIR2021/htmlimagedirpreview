@@ -10,10 +10,9 @@ setup(
     name='imagedirpreview',
     version=__version__,
     author='Carsten Knoll',
-    author_email='...',
     packages=['imagedirpreview'],
     package_data={'imagedirpreview': ['templates/*']},
-    url='...',
+    url='https://github.com/cknoll/imagedirpreview',
     license='BSD3',
     description='Script for previewing the image-content of directories on the file system',
     long_description="""

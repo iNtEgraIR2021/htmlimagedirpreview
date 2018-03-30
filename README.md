@@ -1,4 +1,5 @@
 # imagedirpreview
+[![PyPI version](https://badge.fury.io/py/imagedirpreview.svg)](https://badge.fury.io/py/imagedirpreview)
 
 Simple script to generate a browser based preview of all images in a directory.
 This might be useful to get an quick overview over a lots of images (like icon sets).
@@ -18,7 +19,7 @@ Tested with a ca. 1500 svg-icons (64x64).
 
 ## TODO
 
-**Note:** These todos will only be realized if considerable need is detected.
+**Note:** These todo-items will only be realized if considerable need is detected.
 
 - recognition of already handled files (symlinks)
 - use flask instead of a local html-file
