@@ -1,7 +1,7 @@
 include setup.py
-include imagedirpreview/imagedirpreview.py
-include imagedirpreview/templates/*
-include imagedirpreview/__init__.py
+include htmlimagedirpreview/htmlimagedirpreview.py
+include htmlimagedirpreview/templates/*
+include htmlimagedirpreview/__init__.py
 include requirements.txt
 include README.md
 include LICENSE
