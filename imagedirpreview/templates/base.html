@@ -3,14 +3,6 @@
 <head>
 
 <style>
-
-/*
-@font-face {
-    font-family: 'OpenSans-Regular-webfont';
-    src: url('/theme/font/OpenSans-Regular-webfont.eot');
-    src: local('OpenSans-Regular-webfont'), url('/theme/font/OpenSans-Regular-webfont.woff') format('woff'), url('/theme/font/OpenSans-Regular-webfont.ttf') format('truetype'),  url('/theme/font/OpenSans-Regular-webfont.svg') format('svg');
-}*/
-
 html {
     font-family: OpenSans-Regular-webfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -22,15 +14,13 @@ body {
     padding: 0;
 }
 
-
 .heading{
     margin: 2px;
     padding: 3px;
     text-align: left;
 }
-
-
-.container0{
+    
+.main-container{
     background: #F0F0F0;
     display: block;
     text-align: right;
@@ -50,11 +40,43 @@ body {
     display:none;
 }
 
+img {
+	max-width: 24%;
+}
+@media (min-width: 1200px) {
+    img {
+		max-width: 16%;
+	}
+	.main-container{
+		max-width: 1300px;
+	}
+}
+/*
+    dark mode
+*/
+@media (prefers-color-scheme: dark) {
+    body {
+        filter: invert(1);
+        background: #0c0d17;
+    }
+}
+@media print {
+    body {
+        filter: invert(0);
+        background: transparent;
+    }
+	img {
+		max-width: 19%;
+	}
+	.main-container{
+		max-width: 99.9%;
+	}
+}
 
 </style>
 
 
- <script>
+<script>
 
     var blockid = 0;
 
@@ -81,17 +103,12 @@ body {
 
 </script>
 
-
-
-<title>Image preview for directory `{{ dirpath }}`</title>
-
+<title>Image preview for directory '{{ dirpath }}'</a></title>
 
 </head>
 <body>
 
-
-
-<div class="container0">
+<div class="main-container">
 
 <div class="container">
     <div class="heading">
@@ -99,7 +116,7 @@ body {
     <h1>Image preview </h1>
 
     <p style="font-size:80%;">
-    For directory `{{ dirpath }}`.
+    For directory <a href="file://{{dirpath}}/"><i>{{ dirpath }}</i></a>.
     </p>
     {% if blocknumber > 1 %}
     <p>
@@ -114,7 +131,7 @@ body {
 
 <div class="container" id="block0">
 {% for img in imglist %}
-            <img src="file://{{dirpath}}/{{img}}" title="{{img}}">
+            <a href="file://{{dirpath}}/{{img}}"><img src="file://{{dirpath}}/{{img}}" title="{{img}}" alt="{{img}}"></a>
 
             {% if loop.index is divisibleby(blocksize) %}
 </div>
@@ -147,12 +164,6 @@ body {
 </p>
 <br>
 <br>
-<p>
-
-
-</p>
-
-
-
+<p></p>
 </body>
 </html>
